@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Banten: Menara & Masjid Agung</title>
+  
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  
+  <!-- MindAR untuk A-Frame -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  
+  <!-- CSS Kustom -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- UI Overlay -->
+  <div id="ui-container">
+    <div class="header-box">
+      <h1>AR Jejak Banten</h1>
+      <p>Arahkan kamera ke gambar marker Menara atau Masjid.</p>
+    </div>
+    
+    <div class="marker-preview-container">
+      <h3>Marker yang Tersedia:</h3>
+      <div class="marker-images">
+        <div class="marker-item">
+          <img src="assets/markers/menara.png" alt="Marker Menara">
+          <span>Menara</span>
+        </div>
+        <div class="marker-item">
+          <img src="assets/markers/masjid.png" alt="Marker Masjid">
+          <span>Masjid</span>
+        </div>
+      </div>
+      <p class="note">Catatan: Karena ini versi purwarupa, Anda perlu mengkompilasi 2 gambar di atas menjadi file <code>targets.mind</code> melalui <a href="https://hiukim.github.io/mind-ar-js-doc/tools/compile" target="_blank" style="color: #fff; text-decoration: underline;">MindAR Compiler Tool</a>, lalu simpan di folder <code>assets/</code>.</p>
+    </div>
+  </div>
+
+  <!-- Scene AR -->
+  <!-- PERHATIAN: src untuk mindar-image harus diisi dengan path ke file .mind hasil kompilasi Anda -->
+  <a-scene 
+    mindar-image="imageTargetSrc: ./assets/targets.mind; autoStart: true; uiScanning: no;" 
+    color-space="sRGB" 
+    renderer="colorManagement: true, physicallyCorrectLights" 
+    vr-mode-ui="enabled: false" 
+    device-orientation-permission-ui="enabled: false"
+    id="ar-scene">
+    
+    <a-assets>
+      <!-- Material warna kustom -->
+      <a-mixin id="bata" material="color: #c95c47"></a-mixin>
+      <a-mixin id="putih-tulang" material="color: #e8e4db"></a-mixin>
+      <a-mixin id="atap-hitam" material="color: #2b2b2b"></a-mixin>
+    </a-assets>
+
+    <!-- Kamera -->
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- TARGET 0: MENARA BANTEN (Diasumsikan gambar menara adalah gambar pertama di mind file) -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <!-- 3D Model Placeholder: Menara Banten (Bentuk Silinder Bertingkat) -->
+      <a-entity position="0 0.5 0" scale="0.3 0.3 0.3">
+        <!-- Dasar -->
+        <a-cylinder position="0 -1.5 0" radius="1.2" height="0.5" mixin="bata"></a-cylinder>
+        <a-cylinder position="0 -1.25 0" radius="1" height="0.5" mixin="putih-tulang"></a-cylinder>
+        <!-- Badan -->
+        <a-cylinder position="0 0 0" radius="0.8" height="2" mixin="putih-tulang"></a-cylinder>
+        <a-cylinder position="0 1.2 0" radius="0.9" height="0.4" mixin="putih-tulang"></a-cylinder>
+        <!-- Puncak -->
+        <a-cylinder position="0 1.6 0" radius="0.6" height="0.5" mixin="putih-tulang"></a-cylinder>
+        <a-cone position="0 2.2 0" radius-bottom="0.8" radius-top="0" height="0.8" mixin="bata"></a-cone>
+      </a-entity>
+    </a-entity>
+
+    <!-- TARGET 1: MASJID AGUNG BANTEN (Diasumsikan gambar masjid adalah gambar kedua di mind file) -->
+    <a-entity mindar-image-target="targetIndex: 1">
+      <!-- 3D Model Placeholder: Masjid Agung Banten (Bentuk Kubus + Atap Tumpuk) -->
+      <a-entity position="0 0 0" scale="0.3 0.3 0.3" rotation="90 0 0">
+        <!-- Bangunan Utama -->
+        <a-box position="0 0.5 0" width="3" height="1" depth="3" mixin="putih-tulang"></a-box>
+        <!-- Atap Tumpuk (Khas Banten/Jawa) -->
+        <!-- Tumpuk 1 -->
+        <a-cone position="0 1.25 0" radius-bottom="2.2" radius-top="1.5" height="0.5" segments-radial="4" mixin="atap-hitam" rotation="0 45 0"></a-cone>
+        <!-- Tumpuk 2 -->
+        <a-cone position="0 1.75 0" radius-bottom="1.7" radius-top="1" height="0.5" segments-radial="4" mixin="atap-hitam" rotation="0 45 0"></a-cone>
+        <!-- Tumpuk 3 -->
+        <a-cone position="0 2.5 0" radius-bottom="1.2" radius-top="0" height="1" segments-radial="4" mixin="atap-hitam" rotation="0 45 0"></a-cone>
+      </a-entity>
+    </a-entity>
+
+  </a-scene>
+
+  <script>
+    // Menyembunyikan preview marker jika AR sudah berjalan
+    const sceneEl = document.querySelector('a-scene');
+    sceneEl.addEventListener("arReady", (event) => {
+      document.querySelector('.marker-preview-container').style.display = 'none';
+      console.log("MindAR siap");
+    });
+  </script>
+</body>
+</html>
