@@ -37,6 +37,18 @@
       <p class="note">Izinkan akses kamera dan siapkan gambar target Anda.</p>
     </div>
   </div>
+  
+  <!-- Info Button -->
+  <div id="info-btn" class="info-btn">i</div>
+
+  <!-- Modal Sejarah -->
+  <div id="info-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h2 id="modal-title">Menara Banten</h2>
+      <p id="modal-text"></p>
+    </div>
+  </div>
 
   <!-- Scene AR -->
   <!-- Menambahkan gesture-detector dan filter OneEuroFilter untuk mengurangi jitter -->
@@ -218,9 +230,64 @@
 
   <script>
     const sceneEl = document.querySelector('a-scene');
+    
+    // Teks Sejarah
+    const textMenara = "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten, sebuah kerajaan Islam maritim terbesar di ujung barat Pulau Jawa yang berjaya pada abad ke-16 hingga ke-19. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid. Dirancang oleh arsitek keturunan Tionghoa bernama Cek Ban Cut, menara ini memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok. Menara ini memiliki fungsi ganda: sebagai tempat muazin mengumandangkan azan untuk memanggil umat, sekaligus sebagai menara pengawas maritim pelabuhan Karangantu yang sibuk. Perpaduan unsur arsitektur ini menegaskan esensi kearifan lokal Kesultanan Banten yang menunjukkan bahwa peradaban dapat maju melalui akulturasi budaya, keterbukaan, serta penghormatan terhadap keberagaman.";
+    
+    const textMasjid = "Masjid Agung Banten dibangun pertama kali pada masa pemerintahan Sultan Maulana Hasanuddin (putra Sunan Gunung Jati) pada abad ke-16. Kompleks bangunan ini bukan sekadar pusat ibadah, melainkan manifestasi perpaduan budaya dan kearifan lokal Nusantara yang sangat toleran dan inklusif. Secara arsitektural, Masjid Agung Banten memancarkan substansi kearifan lokal melalui desain atapnya. Berbeda dengan kubah masjid pada umumnya, masjid ini menggunakan atap tumpuk lima berbentuk limas yang diadaptasi dari gaya bangunan Meru pada era Hindu-Buddha. Lima tumpukan ini melambangkan lima Rukun Islam, sekaligus menunjukkan bagaimana dakwah Islam menyerap dan menghargai nilai-nilai tradisi lokal secara damai tanpa menghilangkannya.";
+
+    // UI Elements
+    const infoBtn = document.getElementById('info-btn');
+    const infoModal = document.getElementById('info-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+
+    let currentTarget = null;
+
     sceneEl.addEventListener("arReady", (event) => {
       document.querySelector('.marker-preview-container').style.display = 'none';
       console.log("MindAR siap");
+    });
+
+    // Menara Banten Target
+    const targetMenara = document.querySelector('[mindar-image-target="targetIndex: 0"]');
+    targetMenara.addEventListener("targetFound", event => {
+      currentTarget = "Menara Banten";
+      infoBtn.style.display = "flex";
+    });
+    targetMenara.addEventListener("targetLost", event => {
+      currentTarget = null;
+      infoBtn.style.display = "none";
+      infoModal.style.display = "none";
+    });
+
+    // Masjid Agung Target
+    const targetMasjid = document.querySelector('[mindar-image-target="targetIndex: 1"]');
+    targetMasjid.addEventListener("targetFound", event => {
+      currentTarget = "Masjid Agung Banten";
+      infoBtn.style.display = "flex";
+    });
+    targetMasjid.addEventListener("targetLost", event => {
+      currentTarget = null;
+      infoBtn.style.display = "none";
+      infoModal.style.display = "none";
+    });
+
+    // Modal Interaction
+    infoBtn.addEventListener("click", () => {
+      if (currentTarget === "Menara Banten") {
+        modalTitle.innerText = "Menara Banten";
+        modalText.innerText = textMenara;
+      } else if (currentTarget === "Masjid Agung Banten") {
+        modalTitle.innerText = "Masjid Agung Banten";
+        modalText.innerText = textMasjid;
+      }
+      infoModal.style.display = "flex";
+    });
+
+    closeModal.addEventListener("click", () => {
+      infoModal.style.display = "none";
     });
   </script>
 </body>
