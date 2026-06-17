@@ -61,19 +61,7 @@
     gesture-detector
     id="ar-scene">
     
-    <a-assets>
-      <!-- 3D Models (GLB) -->
-      <a-asset-item id="glb-bale-budaya" src="assets/models/Bale_Budaya_Pandeglang.glb"></a-asset-item>
-      <a-asset-item id="glb-keraton-kaibon" src="assets/models/Keraton_Kaibon.glb"></a-asset-item>
-      <a-asset-item id="glb-masjid-agung" src="assets/models/Masjid_Agung_Banten_Lama.glb"></a-asset-item>
-      <a-asset-item id="glb-menara-air" src="assets/models/Menara_Air_Pandeglang.glb"></a-asset-item>
-      <a-asset-item id="glb-menara-banten" src="assets/models/Menara_Banten_Lama_v2.glb"></a-asset-item>
-      <a-asset-item id="glb-kraton-surosowan" src="assets/models/Kraton_Surosowan.glb"></a-asset-item>
-      <a-asset-item id="glb-benteng-speelwijk" src="assets/models/Benteng_Speelwijk.glb"></a-asset-item>
-      <a-asset-item id="glb-bendungan-pamarayan" src="assets/models/Bendungan_Lama_Pamarayan.glb"></a-asset-item>
-      <a-asset-item id="glb-mercusuar" src="assets/models/Menara_Cikoneng_Anyer.glb"></a-asset-item>
-      <a-asset-item id="glb-polresta" src="assets/models/Polresta_Serang_Kota.glb"></a-asset-item>
-    </a-assets>
+    <a-assets></a-assets>
 
     <!-- Kamera -->
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -81,70 +69,70 @@
     <!-- TARGET 0: Bale Budaya Pandeglang -->
     <a-entity mindar-image-target="targetIndex: 0">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-bale-budaya" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Bale_Budaya_Pandeglang.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 1: Kraton Kaibon -->
     <a-entity mindar-image-target="targetIndex: 1">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-keraton-kaibon" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Keraton_Kaibon.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 2: Masjid Agung Banten Lama -->
     <a-entity mindar-image-target="targetIndex: 2">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-masjid-agung" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Masjid_Agung_Banten_Lama.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 3: Menara Air Pandeglang -->
     <a-entity mindar-image-target="targetIndex: 3">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-menara-air" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Menara_Air_Pandeglang.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 4: Menara Banten Lama -->
     <a-entity mindar-image-target="targetIndex: 4">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-menara-banten" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Menara_Banten_Lama_v2.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 5: Kraton Surosowan -->
     <a-entity mindar-image-target="targetIndex: 5">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-kraton-surosowan" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Kraton_Surosowan.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 6: Benteng Speelwijk -->
     <a-entity mindar-image-target="targetIndex: 6">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-benteng-speelwijk" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Benteng_Speelwijk.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 7: Bendungan Lama Pamarayan -->
     <a-entity mindar-image-target="targetIndex: 7">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-bendungan-pamarayan" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Bendungan_Lama_Pamarayan.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 8: Mercusuar Cikoneng Anyer -->
     <a-entity mindar-image-target="targetIndex: 8">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-mercusuar" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Menara_Cikoneng_Anyer.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
     <!-- TARGET 9: Polresta Serang Kota -->
     <a-entity mindar-image-target="targetIndex: 9">
       <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
-        <a-entity gltf-model="#glb-polresta" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+        <a-entity data-src="assets/models/Polresta_Serang_Kota.glb" class="lazy-model" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
       </a-entity>
     </a-entity>
 
@@ -200,6 +188,24 @@
         el.addEventListener("targetFound", event => {
           currentTarget = t.name;
           infoBtn.style.display = "flex";
+          
+          // Lazy load the 3D model to save memory and prevent browser crash
+          const modelEl = el.querySelector('.lazy-model');
+          if (modelEl && !modelEl.getAttribute('gltf-model-loaded')) {
+             const glbPath = modelEl.getAttribute('data-src');
+             console.log("Loading model: " + glbPath);
+             modelEl.setAttribute('gltf-model', glbPath);
+             modelEl.setAttribute('gltf-model-loaded', 'true');
+             
+             // Ganti status teks agar user tahu sedang mengunduh
+             document.querySelector('.marker-preview-container').style.display = 'block';
+             document.querySelector('.marker-preview-container h3').innerText = 'Mengunduh 3D Model...';
+             document.querySelector('.marker-preview-container p').innerText = 'Harap tunggu (model berukuran besar)';
+             
+             modelEl.addEventListener('model-loaded', () => {
+                 document.querySelector('.marker-preview-container').style.display = 'none';
+             });
+          }
         });
         el.addEventListener("targetLost", event => {
           if(currentTarget === t.name) {
