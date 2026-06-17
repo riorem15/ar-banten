@@ -62,185 +62,49 @@
     id="ar-scene">
     
     <a-assets>
-      <!-- Tekstur Atap Merah (Di-generate via AI) -->
-      <img id="atap-merah" src="assets/roof.png">
+      <!-- Model GLB 3D -->
+      <a-asset-item id="glb-bale-budaya" src="assets/models/Bale_Budaya_Pandeglang.glb"></a-asset-item>
+      <a-asset-item id="glb-keraton-kaibon" src="assets/models/Keraton_Kaibon.glb"></a-asset-item>
+      <a-asset-item id="glb-masjid-agung" src="assets/models/Masjid_Agung_Banten_Lama.glb"></a-asset-item>
+      <a-asset-item id="glb-menara-air" src="assets/models/Menara_Air_Pandeglang.glb"></a-asset-item>
+      <a-asset-item id="glb-menara-banten" src="assets/models/Menara_Banten_Lama.glb"></a-asset-item>
     </a-assets>
 
     <!-- Kamera -->
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <!-- TARGET 0: MENARA BANTEN -->
+    <!-- TARGET 0: Bale Budaya Pandeglang -->
     <a-entity mindar-image-target="targetIndex: 0">
-      <!-- Container yang bisa diputar & diskala dengan gesture -->
-      <a-entity position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3" gesture-handler="minScale: 0.1; maxScale: 1.5; rotationFactor: 5">
-        
-        <!-- Pondasi Berundak (3 Lapis Segi Delapan) -->
-        <a-cylinder position="0 0.1 0" radius="2.0" height="0.2" segments-radial="8" color="#e2e8f0" shadow></a-cylinder>
-        <a-cylinder position="0 0.3 0" radius="1.8" height="0.2" segments-radial="8" color="#cbd5e1" shadow></a-cylinder>
-        <a-cylinder position="0 0.5 0" radius="1.6" height="0.2" segments-radial="8" color="#e2e8f0" shadow></a-cylinder>
-        
-        <!-- Pintu Masuk Bawah yang Menonjol -->
-        <a-entity position="0 1.2 1.45">
-          <a-box width="0.8" height="1.4" depth="0.5" color="#f8fafc"></a-box>
-          <!-- Lubang Pintu (Hitam) -->
-          <a-box position="0 -0.2 0.05" width="0.4" height="1.0" depth="0.5" color="#0f172a"></a-box>
-          <a-cylinder position="0 0.3 0.05" radius="0.2" height="0.5" rotation="90 0 0" color="#0f172a"></a-cylinder>
-          <!-- Atap Pintu Khas Banten -->
-          <a-cone position="0 0.8 0.1" radius-bottom="0.6" radius-top="0" height="0.4" segments-radial="4" rotation="0 45 0" color="#f8fafc"></a-cone>
-        </a-entity>
-
-        <!-- Badan Utama Tingkat 1 (Oktagonal) -->
-        <a-cylinder position="0 2.2 0" radius="1.3" height="3.2" segments-radial="8" color="#f8fafc" roughness="0.9" shadow></a-cylinder>
-        
-        <!-- Jendela Lengkung Tingkat 1 -->
-        <a-entity position="0 2.2 0">
-          <!-- Depan -->
-          <a-box position="0 0 1.25" width="0.25" height="0.4" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="0 0.2 1.25" radius="0.125" height="0.1" rotation="90 0 0" color="#0f172a"></a-cylinder>
-          <!-- Kanan Depan -->
-          <a-box position="0.88 0 0.88" rotation="0 -45 0" width="0.25" height="0.4" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="0.88 0.2 0.88" rotation="90 -45 0" radius="0.125" height="0.1" color="#0f172a"></a-cylinder>
-          <!-- Kanan -->
-          <a-box position="1.25 0 0" rotation="0 -90 0" width="0.25" height="0.4" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="1.25 0.2 0" rotation="90 -90 0" radius="0.125" height="0.1" color="#0f172a"></a-cylinder>
-          <!-- Kiri Depan -->
-          <a-box position="-0.88 0 0.88" rotation="0 45 0" width="0.25" height="0.4" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="-0.88 0.2 0.88" rotation="90 45 0" radius="0.125" height="0.1" color="#0f172a"></a-cylinder>
-          <!-- Kiri -->
-          <a-box position="-1.25 0 0" rotation="0 90 0" width="0.25" height="0.4" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="-1.25 0.2 0" rotation="90 90 0" radius="0.125" height="0.1" color="#0f172a"></a-cylinder>
-        </a-entity>
-
-        <!-- Corbel (Bantalan) Balkon 1 yang Melebar ke Atas -->
-        <a-cone position="0 4.0 0" radius-bottom="1.3" radius-top="1.8" height="0.5" segments-radial="8" color="#f1f5f9"></a-cone>
-        
-        <!-- Lantai Balkon 1 -->
-        <a-cylinder position="0 4.3 0" radius="1.9" height="0.15" segments-radial="8" color="#e2e8f0"></a-cylinder>
-        
-        <!-- Pagar Balkon 1 (Solid Putih dengan garis) -->
-        <a-cylinder position="0 4.55 0" radius="1.85" height="0.4" segments-radial="8" color="#ffffff" opacity="0.65" open-ended="true" side="double"></a-cylinder>
-        <a-torus position="0 4.75 0" radius="1.85" radius-tubular="0.04" segments-tubular="8" color="#f8fafc"></a-torus>
-        <a-torus position="0 4.35 0" radius="1.85" radius-tubular="0.04" segments-tubular="8" color="#f8fafc"></a-torus>
-
-        <!-- Badan Tingkat 2 (Oktagonal, Lebih Ramping) -->
-        <a-cylinder position="0 5.4 0" radius="1.0" height="2.0" segments-radial="8" color="#f8fafc" roughness="0.9" shadow></a-cylinder>
-        
-        <!-- Pintu Atas (Ke Balkon 1) -->
-        <a-entity position="0 4.8 0.95">
-          <a-box width="0.4" height="0.6" depth="0.1" color="#0f172a"></a-box>
-          <a-cylinder position="0 0.3 0" radius="0.2" height="0.1" rotation="90 0 0" color="#0f172a"></a-cylinder>
-        </a-entity>
-
-        <!-- Corbel Balkon 2 -->
-        <a-cone position="0 6.6 0" radius-bottom="1.0" radius-top="1.4" height="0.4" segments-radial="8" color="#f1f5f9"></a-cone>
-        
-        <!-- Lantai Balkon 2 -->
-        <a-cylinder position="0 6.85 0" radius="1.5" height="0.1" segments-radial="8" color="#e2e8f0"></a-cylinder>
-        
-        <!-- Pagar Balkon 2 -->
-        <a-cylinder position="0 7.05 0" radius="1.45" height="0.3" segments-radial="8" color="#ffffff" opacity="0.65" open-ended="true" side="double"></a-cylinder>
-        <a-torus position="0 7.2 0" radius="1.45" radius-tubular="0.03" segments-tubular="8" color="#f8fafc"></a-torus>
-
-        <!-- Tingkat Paling Atas (Di bawah kubah) -->
-        <a-cylinder position="0 7.6 0" radius="0.9" height="0.8" segments-radial="16" color="#f8fafc"></a-cylinder>
-
-        <!-- Kubah Atas (Membulat Bawang Berlapis) -->
-        <a-sphere position="0 8.2 0" radius="0.95" scale="1 0.7 1" color="#f8fafc" shadow></a-sphere>
-        <a-sphere position="0 8.6 0" radius="0.75" scale="1 0.8 1" color="#f8fafc"></a-sphere>
-        <a-sphere position="0 9.0 0" radius="0.5" scale="1 0.9 1" color="#f8fafc"></a-sphere>
-        
-        <!-- Mustaka (Puncak Memolo) -->
-        <a-cylinder position="0 9.4 0" radius="0.08" height="0.4" color="#64748b"></a-cylinder>
-        <a-sphere position="0 9.6 0" radius="0.15" color="#64748b"></a-sphere>
-        <a-cone position="0 9.9 0" radius-bottom="0.1" radius-top="0" height="0.5" color="#64748b"></a-cone>
-
-        <!-- === ANOTASI INTERAKTIF === -->
-        <a-entity position="3.5 8.5 0" look-at="[camera]">
-          <a-plane color="#1e293b" opacity="0.85" width="4" height="1.2" position="0 0.6 0" border-radius="0.5"></a-plane>
-          <a-text value="Kubah Bawang\n(Gaya Tiongkok & Eropa)" color="#ffffff" align="center" width="5" position="0 0.6 0.05"></a-text>
-          <a-cylinder position="-2.5 0.6 0" radius="0.02" height="2" rotation="0 0 90" color="#f59e0b"></a-cylinder>
-          <a-cone position="-3.5 0.6 0" radius-bottom="0.1" height="0.3" rotation="0 0 90" color="#f59e0b"></a-cone>
-        </a-entity>
-
-        <a-entity position="-3.5 4.5 0" look-at="[camera]">
-          <a-plane color="#1e293b" opacity="0.85" width="4" height="1.2" position="0 0.6 0"></a-plane>
-          <a-text value="Bentuk Oktagonal\nMenyuarakan Azan" color="#ffffff" align="center" width="5" position="0 0.6 0.05"></a-text>
-          <a-cylinder position="2.5 0.6 0" radius="0.02" height="2" rotation="0 0 -90" color="#f59e0b"></a-cylinder>
-          <a-cone position="3.5 0.6 0" radius-bottom="0.1" height="0.3" rotation="0 0 -90" color="#f59e0b"></a-cone>
-        </a-entity>
-        
-        <a-entity position="4.0 1.5 0" look-at="[camera]">
-          <a-plane color="#1e293b" opacity="0.85" width="3.5" height="1" position="0 0.5 0"></a-plane>
-          <a-text value="Pondasi Tumpuk\nKokoh & Pintu" color="#ffffff" align="center" width="4" position="0 0.5 0.05"></a-text>
-          <a-cylinder position="-2.2 0.5 0" radius="0.02" height="2.0" rotation="0 0 90" color="#f59e0b"></a-cylinder>
-        </a-entity>
-
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gesture-handler="minScale: 0.05; maxScale: 1.5; rotationFactor: 5">
+        <a-entity gltf-model="#glb-bale-budaya" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
       </a-entity>
     </a-entity>
 
-
-    <!-- TARGET 1: MASJID AGUNG BANTEN -->
+    <!-- TARGET 1: Kraton Kaibon -->
     <a-entity mindar-image-target="targetIndex: 1">
-      <a-entity position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3" gesture-handler="minScale: 0.1; maxScale: 1.5; rotationFactor: 5">
-        
-        <!-- Pondasi Masjid -->
-        <a-box position="0 0.2 0" width="6.4" height="0.4" depth="6.4" color="#d3d3d3"></a-box>
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gesture-handler="minScale: 0.05; maxScale: 1.5; rotationFactor: 5">
+        <a-entity gltf-model="#glb-keraton-kaibon" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+      </a-entity>
+    </a-entity>
 
-        <!-- Bangunan Utama (Dinding Putih) -->
-        <a-box position="0 1.2 0" width="5.8" height="1.6" depth="5.8" color="#f5f5f5" shadow></a-box>
-        
-        <!-- Serambi Depan (Pawestren / Pendopo) -->
-        <a-box position="0 0.6 3.4" width="3" height="0.4" depth="1.2" color="#e0e0e0"></a-box>
-        <!-- Pilar Serambi Depan -->
-        <a-cylinder position="1.3 1.4 3.8" radius="0.1" height="1.2" color="#ffffff"></a-cylinder>
-        <a-cylinder position="-1.3 1.4 3.8" radius="0.1" height="1.2" color="#ffffff"></a-cylinder>
-        <a-cylinder position="0.5 1.4 3.8" radius="0.1" height="1.2" color="#ffffff"></a-cylinder>
-        <a-cylinder position="-0.5 1.4 3.8" radius="0.1" height="1.2" color="#ffffff"></a-cylinder>
-        <!-- Atap Serambi Depan -->
-        <a-cone position="0 2.2 3.4" radius-bottom="2" radius-top="0" height="0.8" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="2 1"></a-cone>
+    <!-- TARGET 2: Masjid Agung Banten Lama -->
+    <a-entity mindar-image-target="targetIndex: 2">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gesture-handler="minScale: 0.05; maxScale: 1.5; rotationFactor: 5">
+        <a-entity gltf-model="#glb-masjid-agung" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+      </a-entity>
+    </a-entity>
 
-        <!-- Atap Tumpuk 5 (Menggunakan Tekstur Genteng Merah) -->
-        <!-- Tumpuk 1 (Terbawah - Paling Lebar) -->
-        <a-cone position="0 2.4 0" radius-bottom="4.2" radius-top="3.0" height="1.2" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="6 2"></a-cone>
-        
-        <!-- Tembok Antar Tumpuk 1 & 2 -->
-        <a-box position="0 3.2 0" width="4.0" height="0.6" depth="4.0" color="#ffffff"></a-box>
-        
-        <!-- Tumpuk 2 -->
-        <a-cone position="0 3.8 0" radius-bottom="3.2" radius-top="2.2" height="1.0" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="4 2"></a-cone>
-        
-        <!-- Tembok Antar Tumpuk 2 & 3 -->
-        <a-box position="0 4.5 0" width="2.8" height="0.5" depth="2.8" color="#ffffff"></a-box>
-        
-        <!-- Tumpuk 3 -->
-        <a-cone position="0 5.0 0" radius-bottom="2.3" radius-top="1.5" height="0.8" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="3 1"></a-cone>
-        
-        <!-- Tumpuk 4 -->
-        <a-cone position="0 5.6 0" radius-bottom="1.6" radius-top="0.8" height="0.6" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="2 1"></a-cone>
-        
-        <!-- Tumpuk 5 (Teratas - Menutup) -->
-        <a-cone position="0 6.1 0" radius-bottom="0.9" radius-top="0" height="0.6" segments-radial="4" rotation="0 45 0" src="#atap-merah" repeat="1 1"></a-cone>
-        
-        <!-- Mahkota Atap (Memolo / Mustaka Masjid) -->
-        <a-cylinder position="0 6.5 0" radius="0.1" height="0.4" color="#8b0000"></a-cylinder>
-        <a-sphere position="0 6.7 0" radius="0.15" color="#8b0000"></a-sphere>
+    <!-- TARGET 3: Menara Air Pandeglang -->
+    <a-entity mindar-image-target="targetIndex: 3">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gesture-handler="minScale: 0.05; maxScale: 1.5; rotationFactor: 5">
+        <a-entity gltf-model="#glb-menara-air" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+      </a-entity>
+    </a-entity>
 
-        <!-- === ANOTASI INTERAKTIF === -->
-        
-        <a-entity position="5.5 4.5 0" look-at="[camera]">
-          <a-plane color="#1e293b" opacity="0.85" width="4" height="1.2" position="0 0.6 0"></a-plane>
-          <a-text value="Atap Tumpuk Lima\n(Gaya Meru/Pilu)" color="#ffffff" align="center" width="5" position="0 0.6 0.05"></a-text>
-          <a-cylinder position="-2.5 0.6 0" radius="0.02" height="2" rotation="0 0 90" color="#f59e0b"></a-cylinder>
-          <a-cone position="-3.5 0.6 0" radius-bottom="0.1" height="0.3" rotation="0 0 90" color="#f59e0b"></a-cone>
-        </a-entity>
-
-        <a-entity position="-5.5 1.5 0" look-at="[camera]">
-          <a-plane color="#1e293b" opacity="0.85" width="4" height="1.2" position="0 0.6 0"></a-plane>
-          <a-text value="Ruang Utama\n(Gaya Jawa & Kolonial)" color="#ffffff" align="center" width="5" position="0 0.6 0.05"></a-text>
-          <a-cylinder position="2.5 0.6 0" radius="0.02" height="2" rotation="0 0 -90" color="#f59e0b"></a-cylinder>
-          <a-cone position="3.5 0.6 0" radius-bottom="0.1" height="0.3" rotation="0 0 -90" color="#f59e0b"></a-cone>
-        </a-entity>
-
+    <!-- TARGET 4: Menara Banten Lama -->
+    <a-entity mindar-image-target="targetIndex: 4">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1" gesture-handler="minScale: 0.05; maxScale: 1.5; rotationFactor: 5">
+        <a-entity gltf-model="#glb-menara-banten" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
       </a-entity>
     </a-entity>
 
@@ -250,9 +114,13 @@
     const sceneEl = document.querySelector('a-scene');
     
     // Teks Sejarah
-    const textMenara = "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten, sebuah kerajaan Islam maritim terbesar di ujung barat Pulau Jawa yang berjaya pada abad ke-16 hingga ke-19. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid. Dirancang oleh arsitek keturunan Tionghoa bernama Cek Ban Cut, menara ini memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok. Menara ini memiliki fungsi ganda: sebagai tempat muazin mengumandangkan azan untuk memanggil umat, sekaligus sebagai menara pengawas maritim pelabuhan Karangantu yang sibuk. Perpaduan unsur arsitektur ini menegaskan esensi kearifan lokal Kesultanan Banten yang menunjukkan bahwa peradaban dapat maju melalui akulturasi budaya, keterbukaan, serta penghormatan terhadap keberagaman.";
-    
-    const textMasjid = "Masjid Agung Banten dibangun pertama kali pada masa pemerintahan Sultan Maulana Hasanuddin (putra Sunan Gunung Jati) pada abad ke-16. Kompleks bangunan ini bukan sekadar pusat ibadah, melainkan manifestasi perpaduan budaya dan kearifan lokal Nusantara yang sangat toleran dan inklusif. Secara arsitektural, Masjid Agung Banten memancarkan substansi kearifan lokal melalui desain atapnya. Berbeda dengan kubah masjid pada umumnya, masjid ini menggunakan atap tumpuk lima berbentuk limas yang diadaptasi dari gaya bangunan Meru pada era Hindu-Buddha. Lima tumpukan ini melambangkan lima Rukun Islam, sekaligus menunjukkan bagaimana dakwah Islam menyerap dan menghargai nilai-nilai tradisi lokal secara damai tanpa menghilangkannya.";
+    const textData = {
+      "Bale Budaya Pandeglang": "Bale Budaya Pandeglang merupakan pusat kegiatan seni dan budaya masyarakat Pandeglang. Tempat ini menjadi saksi berbagai pertunjukan tradisional dan pelestarian kesenian lokal khas Banten.",
+      "Kraton Kaibon": "Keraton Kaibon adalah bekas istana tempat tinggal ibunda Sultan Syafiuddin, Ratu Aisyah. Meskipun kini hanya berupa reruntuhan, gerbang dan struktur yang tersisa menunjukkan keindahan arsitektur perpaduan gaya tradisional dan Eropa pada masanya.",
+      "Masjid Agung Banten": "Masjid Agung Banten dibangun pertama kali pada masa pemerintahan Sultan Maulana Hasanuddin (putra Sunan Gunung Jati) pada abad ke-16. Masjid ini memiliki atap tumpuk lima berbentuk limas yang diadaptasi dari gaya bangunan Meru pada era Hindu-Buddha.",
+      "Menara Air Pandeglang": "Menara Air Pandeglang adalah ikon bersejarah peninggalan kolonial Belanda yang dibangun untuk memenuhi kebutuhan air bersih masyarakat pada masanya. Arsitekturnya khas bangunan fungsional Eropa awal abad ke-20.",
+      "Menara Banten": "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid, dirancang memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok."
+    };
 
     // UI Elements
     const infoBtn = document.getElementById('info-btn');
@@ -268,40 +136,38 @@
       console.log("MindAR siap");
     });
 
-    // Menara Banten Target
-    const targetMenara = document.querySelector('[mindar-image-target="targetIndex: 0"]');
-    targetMenara.addEventListener("targetFound", event => {
-      currentTarget = "Menara Banten";
-      infoBtn.style.display = "flex";
-    });
-    targetMenara.addEventListener("targetLost", event => {
-      currentTarget = null;
-      infoBtn.style.display = "none";
-      infoModal.style.display = "none";
-    });
+    const targets = [
+      { index: 0, name: "Bale Budaya Pandeglang" },
+      { index: 1, name: "Kraton Kaibon" },
+      { index: 2, name: "Masjid Agung Banten" },
+      { index: 3, name: "Menara Air Pandeglang" },
+      { index: 4, name: "Menara Banten" }
+    ];
 
-    // Masjid Agung Target
-    const targetMasjid = document.querySelector('[mindar-image-target="targetIndex: 1"]');
-    targetMasjid.addEventListener("targetFound", event => {
-      currentTarget = "Masjid Agung Banten";
-      infoBtn.style.display = "flex";
-    });
-    targetMasjid.addEventListener("targetLost", event => {
-      currentTarget = null;
-      infoBtn.style.display = "none";
-      infoModal.style.display = "none";
+    targets.forEach(t => {
+      const el = document.querySelector(`[mindar-image-target="targetIndex: ${t.index}"]`);
+      if(el) {
+        el.addEventListener("targetFound", event => {
+          currentTarget = t.name;
+          infoBtn.style.display = "flex";
+        });
+        el.addEventListener("targetLost", event => {
+          if(currentTarget === t.name) {
+            currentTarget = null;
+            infoBtn.style.display = "none";
+            infoModal.style.display = "none";
+          }
+        });
+      }
     });
 
     // Modal Interaction
     infoBtn.addEventListener("click", () => {
-      if (currentTarget === "Menara Banten") {
-        modalTitle.innerText = "Menara Banten";
-        modalText.innerText = textMenara;
-      } else if (currentTarget === "Masjid Agung Banten") {
-        modalTitle.innerText = "Masjid Agung Banten";
-        modalText.innerText = textMasjid;
+      if (currentTarget && textData[currentTarget]) {
+        modalTitle.innerText = currentTarget;
+        modalText.innerText = textData[currentTarget];
+        infoModal.style.display = "flex";
       }
-      infoModal.style.display = "flex";
     });
 
     closeModal.addEventListener("click", () => {
