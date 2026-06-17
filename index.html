@@ -71,6 +71,8 @@
       <a-asset-item id="glb-kraton-surosowan" src="assets/models/Kraton_Surosowan.glb"></a-asset-item>
       <a-asset-item id="glb-benteng-speelwijk" src="assets/models/Benteng_Speelwijk.glb"></a-asset-item>
       <a-asset-item id="glb-bendungan-pamarayan" src="assets/models/Bendungan_Lama_Pamarayan.glb"></a-asset-item>
+      <a-asset-item id="glb-mercusuar" src="assets/models/Menara_Cikoneng_Anyer.glb"></a-asset-item>
+      <a-asset-item id="glb-polresta" src="assets/models/Polresta_Serang_Kota.glb"></a-asset-item>
     </a-assets>
 
     <!-- Kamera -->
@@ -132,6 +134,20 @@
       </a-entity>
     </a-entity>
 
+    <!-- TARGET 8: Mercusuar Cikoneng Anyer -->
+    <a-entity mindar-image-target="targetIndex: 8">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
+        <a-entity gltf-model="#glb-mercusuar" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- TARGET 9: Polresta Serang Kota -->
+    <a-entity mindar-image-target="targetIndex: 9">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
+        <a-entity gltf-model="#glb-polresta" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+      </a-entity>
+    </a-entity>
+
   </a-scene>
 
   <script>
@@ -146,7 +162,9 @@
       "Menara Banten": "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid, dirancang memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok.",
       "Kraton Surosowan": "Kraton Surosowan adalah bekas istana Kesultanan Banten yang megah. Istana ini pernah menjadi pusat pemerintahan Banten pada masa keemasannya sebelum dihancurkan oleh Belanda.",
       "Benteng Speelwijk": "Benteng Speelwijk dibangun oleh VOC sebagai simbol kekuasaan Belanda di Banten. Benteng ini menjadi basis pertahanan maritim Belanda di pesisir Banten.",
-      "Bendungan Lama Pamarayan": "Bendungan Lama Pamarayan merupakan salah satu peninggalan infrastruktur perairan kolonial Belanda terbesar di Indonesia pada masanya, dirancang untuk mengairi lahan pertanian yang luas."
+      "Bendungan Lama Pamarayan": "Bendungan Lama Pamarayan merupakan salah satu peninggalan infrastruktur perairan kolonial Belanda terbesar di Indonesia pada masanya, dirancang untuk mengairi lahan pertanian yang luas.",
+      "Mercusuar Cikoneng Anyer": "Mercusuar Cikoneng (Mercusuar Anyer) merupakan titik Nol Kilometer Jalan Raya Pos Anyer-Panarukan. Mercusuar ini dibangun pada tahun 1885 oleh Raja Willem III.",
+      "Polresta Serang Kota": "Polresta Serang Kota adalah markas kepolisian resor kota yang bertugas melayani dan mengayomi masyarakat di wilayah kota Serang, Banten."
     };
 
     // UI Elements
@@ -171,7 +189,9 @@
       { index: 4, name: "Menara Banten" },
       { index: 5, name: "Kraton Surosowan" },
       { index: 6, name: "Benteng Speelwijk" },
-      { index: 7, name: "Bendungan Lama Pamarayan" }
+      { index: 7, name: "Bendungan Lama Pamarayan" },
+      { index: 8, name: "Mercusuar Cikoneng Anyer" },
+      { index: 9, name: "Polresta Serang Kota" }
     ];
 
     targets.forEach(t => {
