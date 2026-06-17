@@ -68,6 +68,9 @@
       <a-asset-item id="glb-masjid-agung" src="assets/models/Masjid_Agung_Banten_Lama.glb"></a-asset-item>
       <a-asset-item id="glb-menara-air" src="assets/models/Menara_Air_Pandeglang.glb"></a-asset-item>
       <a-asset-item id="glb-menara-banten" src="assets/models/Menara_Banten_Lama_v2.glb"></a-asset-item>
+      <a-asset-item id="glb-kraton-surosowan" src="assets/models/Kraton_Surosowan.glb"></a-asset-item>
+      <a-asset-item id="glb-benteng-speelwijk" src="assets/models/Benteng_Speelwijk.glb"></a-asset-item>
+      <a-asset-item id="glb-bendungan-pamarayan" src="assets/models/Bendungan_Lama_Pamarayan.glb"></a-asset-item>
     </a-assets>
 
     <!-- Kamera -->
@@ -108,6 +111,27 @@
       </a-entity>
     </a-entity>
 
+    <!-- TARGET 5: Kraton Surosowan -->
+    <a-entity mindar-image-target="targetIndex: 5">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
+        <a-entity gltf-model="#glb-kraton-surosowan" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- TARGET 6: Benteng Speelwijk -->
+    <a-entity mindar-image-target="targetIndex: 6">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
+        <a-entity gltf-model="#glb-benteng-speelwijk" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- TARGET 7: Bendungan Lama Pamarayan -->
+    <a-entity mindar-image-target="targetIndex: 7">
+      <a-entity position="0 0 0" rotation="0 0 0" scale="1 1 1" gesture-handler="minScale: 0.1; maxScale: 10; rotationFactor: 5">
+        <a-entity gltf-model="#glb-bendungan-pamarayan" position="0 0 0" rotation="0 0 0" scale="250 250 250"></a-entity>
+      </a-entity>
+    </a-entity>
+
   </a-scene>
 
   <script>
@@ -119,7 +143,10 @@
       "Kraton Kaibon": "Keraton Kaibon adalah bekas istana tempat tinggal ibunda Sultan Syafiuddin, Ratu Aisyah. Meskipun kini hanya berupa reruntuhan, gerbang dan struktur yang tersisa menunjukkan keindahan arsitektur perpaduan gaya tradisional dan Eropa pada masanya.",
       "Masjid Agung Banten": "Masjid Agung Banten dibangun pertama kali pada masa pemerintahan Sultan Maulana Hasanuddin (putra Sunan Gunung Jati) pada abad ke-16. Masjid ini memiliki atap tumpuk lima berbentuk limas yang diadaptasi dari gaya bangunan Meru pada era Hindu-Buddha.",
       "Menara Air Pandeglang": "Menara Air Pandeglang adalah ikon bersejarah peninggalan kolonial Belanda yang dibangun untuk memenuhi kebutuhan air bersih masyarakat pada masanya. Arsitekturnya khas bangunan fungsional Eropa awal abad ke-20.",
-      "Menara Banten": "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid, dirancang memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok."
+      "Menara Banten": "Menara Banten adalah saksi bisu kejayaan Kesultanan Banten. Menara berbentuk segi delapan (oktagonal) ini menjulang tegak setinggi 24 meter di sisi timur masjid, dirancang memadukan bentuk tubuh ala mercusuar Eropa dengan atap kubah bergaya Tiongkok.",
+      "Kraton Surosowan": "Kraton Surosowan adalah bekas istana Kesultanan Banten yang megah. Istana ini pernah menjadi pusat pemerintahan Banten pada masa keemasannya sebelum dihancurkan oleh Belanda.",
+      "Benteng Speelwijk": "Benteng Speelwijk dibangun oleh VOC sebagai simbol kekuasaan Belanda di Banten. Benteng ini menjadi basis pertahanan maritim Belanda di pesisir Banten.",
+      "Bendungan Lama Pamarayan": "Bendungan Lama Pamarayan merupakan salah satu peninggalan infrastruktur perairan kolonial Belanda terbesar di Indonesia pada masanya, dirancang untuk mengairi lahan pertanian yang luas."
     };
 
     // UI Elements
@@ -141,7 +168,10 @@
       { index: 1, name: "Kraton Kaibon" },
       { index: 2, name: "Masjid Agung Banten" },
       { index: 3, name: "Menara Air Pandeglang" },
-      { index: 4, name: "Menara Banten" }
+      { index: 4, name: "Menara Banten" },
+      { index: 5, name: "Kraton Surosowan" },
+      { index: 6, name: "Benteng Speelwijk" },
+      { index: 7, name: "Bendungan Lama Pamarayan" }
     ];
 
     targets.forEach(t => {
