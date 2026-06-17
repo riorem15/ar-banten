@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "heic-convert": "^2.1.0",
+    "msgpackr": "^2.0.4",
+    "puppeteer": "^25.1.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image.prod.js"></script>
+</head>
+<body>
+    <img id="img0" src="New Publick/Bale Budaya Pandeglang/50.Bale Budaya Sore Hari .jpg" crossorigin="anonymous">
+    <img id="img1" src="New Publick/Kraton Kaibon/Tampak Luar Masjid Kaibon 3.jpeg" crossorigin="anonymous">
+    <img id="img2" src="New Publick/Masjid Agung Banten Lama/Masjid Agung Banten .jpg" crossorigin="anonymous">
+    <img id="img3" src="New Publick/Menara Air Pandeglang/Keseluruhan Menara Air Pandeglang.jpg" crossorigin="anonymous">
+    <img id="img4" src="New Publick/Menara Banten Lama/80e5abdf-fde2-4cb4-9065-a25ace59a2d0.jpg" crossorigin="anonymous">
+
+  <script>
+    window.onload = async () => {
+      const images = [];
+      for (let i = 0; i <= 4; i++) {
+        images.push(document.getElementById('img' + i));
+      }
+      
+      try {
+        const compiler = new window.MINDAR.IMAGE.Compiler();
+        await compiler.compileImageTargets(images, (progress) => {
+          console.log("Progress: " + progress.toFixed(2) + "%");
+        });
+
+        const exportedBuffer = await compiler.exportData();
+        const blob = new Blob([exportedBuffer]);
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        document.body.appendChild(a);
+        a.href = url;
+        a.download = "targets.mind";
+        a.click();
+        
+        console.log("DONE");
+      } catch (err) {
+        console.error("ERROR: " + err.message);
+      }
+    };
+  </script>
+</body>
+</html>
